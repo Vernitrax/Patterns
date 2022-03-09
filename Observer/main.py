@@ -5,8 +5,8 @@ from Observer.information_office import PropagandaOffice
 
 
 def main():
-    bio_scanner = BioScanner()
-    energy_scanner = EnergyScanner()
+    bio_scanner = BioScanner(message="evil robots detected!")
+    energy_scanner = EnergyScanner(message="high energy signature, pirates detected!")
     interpreter = WarpgateInterpreter(bio_scanner, energy_scanner)
     sensor = WarpgateSensor("r28-4c", interpreter)
     office = PropagandaOffice()

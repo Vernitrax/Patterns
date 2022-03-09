@@ -15,8 +15,6 @@ class Scanner(ABC):
 
 @dataclass
 class BioScanner(Scanner):
-    message = "evil robots detected!"
-
     def scan_fleet(self, ships_count: int) -> list:
         result = []
         for i in range(ships_count):
@@ -26,8 +24,6 @@ class BioScanner(Scanner):
 
 @dataclass
 class EnergyScanner(Scanner):
-    message = "high energy signature, pirates detected!"
-
     def scan_fleet(self, ships_count: int) -> list:
         result = []
         for i in range(ships_count):
