@@ -1,15 +1,19 @@
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
+
 from numpy.random import choice
 
 
+@dataclass
 class Scanner(ABC):
-    message = "unknown threat detected!"
+    message: str
 
     @abstractmethod
     def scan_fleet(self, ships_count: int) -> list:
         pass
 
 
+@dataclass
 class BioScanner(Scanner):
     message = "evil robots detected!"
 
@@ -20,6 +24,7 @@ class BioScanner(Scanner):
         return result
 
 
+@dataclass
 class EnergyScanner(Scanner):
     message = "high energy signature, pirates detected!"
 
