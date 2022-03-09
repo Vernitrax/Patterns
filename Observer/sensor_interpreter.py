@@ -4,11 +4,7 @@ from Observer.information_office import InformationOffice
 from Observer.scanner import Scanner
 
 
-class Interpreter(ABC):
-    @abstractmethod
-    def analyse(self, ships_count):
-        pass
-
+class Observable(ABC):
     @abstractmethod
     def notify(self, ships_count: int, scanner: Scanner):
         pass
@@ -19,6 +15,12 @@ class Interpreter(ABC):
 
     @abstractmethod
     def remove_observer(self, observer: InformationOffice):
+        pass
+
+
+class Interpreter(Observable):
+    @abstractmethod
+    def analyse(self, ships_count):
         pass
 
 
